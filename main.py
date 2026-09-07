@@ -65,7 +65,7 @@ def send_amazing_alert(header):
 
 @app.post("/")
 async def telegram_webhook(request: Request):
-        return {"status": "error", "message": str(e)
+        return {"status": "error", "message": "good"}
                 
 @app.get("/send/{pas}")
 async def generalbot(pas): 
