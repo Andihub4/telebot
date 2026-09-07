@@ -1,6 +1,8 @@
 import os
 import requests
 from fastapi import FastAPI, Request
+from datetime import datetime
+
 
 app = FastAPI()
 
@@ -59,16 +61,17 @@ def send_amazing_alert(header):
 
              response = requests.post(url, json=payload)
              print(response.json()) # Verifies success or shows API errors
+             return "good"
 
 
 
 
-@app.post("/")
+@app.get("/")
 async def telegram_webhook(request: Request):
         return {"status": "error", "message": "good"}
                 
 @app.get("/send/{pas}")
 async def generalbot(pas): 
     print(" Request arived ..")
-    send_amazing_alert(False)
+    return send_amazing_alert(False)
     
